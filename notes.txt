@@ -1,0 +1,13 @@
+Goal 1
+
+create book model
+-title
+-author
+-description
+-detail
+
+create homepage that shows all books (url and template and view)
+
+
+create superuser to add edit delete books
+books displayed in order from the top most recently added on top
