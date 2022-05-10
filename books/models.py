@@ -18,12 +18,18 @@ class Book(models.Model):
     description = models.TextField(null = True, blank = True)
     created_at  = models.DateTimeField(auto_now_add=True)
 #in this case below a book can have 1 category one to many relationship, like a library
-    category =  models.ForeignKey('Category', related_name='books',null = True, on_delete=models.CASCADE )
+    category    = models.ForeignKey('Category', related_name='books',null = True, on_delete=models.CASCADE )
+
+    def __str__(self):
+        return self.title
     
 
 class  Category(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(null=False, unique =True)
+
+    def __str__(self):
+        return self.name
 
     def get_absolute_url(self):
         return reverse('category_detail', kwargs = {'slug': self.slug})

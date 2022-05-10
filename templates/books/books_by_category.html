@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<h1>Books</h1> 
+<h1>{{category}}</h1> 
 
 <a href="{% url 'login' %}">Login</a>
 
@@ -12,7 +12,6 @@
             <div>
                 <h5>{{ book.title }}</h5>
                 <p>{{ book.author }}</p>
-                <p>{{book.category}}</p>
                 <p>{{ book.created_at }}</p>
                 <a href="{{book.url}}">Link to Book</a>
                 <a href="{% url 'book_detail' book.pk %}"
