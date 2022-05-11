@@ -11,6 +11,11 @@
         <br>
         <h5>About the Book</h5>
         <p>{{ book.description }}</p>
+  <form action="{% url 'add_favorite' pk=book.pk %}" method="POST">
+
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Add to Favorites</button>
     </div>
 </div>
 {% endblock %}

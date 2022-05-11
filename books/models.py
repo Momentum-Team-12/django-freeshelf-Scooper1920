@@ -45,4 +45,5 @@ class  Category(models.Model):
 
 class Favorite(models.Model):
     book = models.ForeignKey('Book', related_name='favorites',on_delete=models.CASCADE)
+    #foreign key = user.pk
     user = models.ForeignKey('User', related_name= 'favorites', on_delete=models.CASCADE)
